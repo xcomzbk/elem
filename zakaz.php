@@ -1,0 +1,25 @@
+<?
+if((isset($_POST['name'])&&$_POST['name']!="")&&(isset($_POST['item'])&&$_POST['item']!="")&&(isset($_POST['street'])&&$_POST['street']!="")&&(isset($_POST['house'])&&$_POST['house']!="")&&(isset($_POST['num'])&&$_POST['num']!="")&&(isset($_POST['phone'])&&$_POST['phone']!="")){ //Проверка отправилось ли наше поля name и не пустые ли они
+        $to = 'vitaly<element75rus@mail.ru>, '; //Почта получателя, через запятую можно указать сколько угодно адресов
+        $to .= 'ivan<ivangromkiy@gmail.com>';
+        $subject = 'Новый заказ'; //Загаловок сообщения
+        $message = '
+                <html>
+                    <head>
+                        <title>'.$subject.'</title>
+                        <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+	                    <meta http-equiv="content-language" content="ru">
+                    </head>
+                    <body>
+                        <p>Имя: '.$_POST['name'].'</p>
+                        <p>Техника: '.$_POST['item'].'</p>
+                        <p>Адрес: '.$_POST['street'].','.$_POST['house'].','.$_POST['num'].'</p>
+                        <p>Телефон: <a href="tel:'.$_POST['phone'].'">'.$_POST['phone'].'</a></p>                        
+                    </body>
+                </html>'; //Текст нащего сообщения можно использовать HTML теги
+        $headers  = "Content-type: text/html; charset=utf-8 \r\n"; //Кодировка письма
+        $headers .= "From: Заказ <zakaz@xn----8sbnaqoij9bc7c8c.xn--p1ai>\r\n"; //Наименование и почта отправителя
+        mail($to, $subject, $message, $headers); //Отправка письма с помощью функции mail
+        echo $message;
+}
+?>

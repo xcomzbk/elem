@@ -1,6 +1,2 @@
 # elem
-Service Element 
-
-client did not pay hosting
-
-final version Manager stored in hosting
+service-element (ver 0.9) //опубликованная версия к сожалению утеряна - аккаунт хостинга, чтобы ее скачать, не проплачен клиентом! отличия минимальные

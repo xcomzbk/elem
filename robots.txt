@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /element/
+Disallow: /manager.element/
+Disallow: /cgi-bin/
+Disallow: /css/
+Disallow: /font/
+Disallow: /js/
+Disallow: /img/
